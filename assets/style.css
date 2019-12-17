@@ -1,0 +1,261 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	padding: 0px;
+}
+
+body {
+	margin: 0px auto;
+	max-width: 1360px;
+	min-width: 1360px;
+}
+
+@font-face {
+	font-family: 'PFDinTextCondPro-Regular';
+	src: local('PFDinTextCondPro-Regular'), url('PFDinTextCondPro-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'PTSerifBold';
+	src: local('PTSerifBold'), url('PTSerifBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'PTSerifRegular';
+	src: local('PTSerifRegular'), url('PTSerifRegular.woff') format('woff');
+}
+
+.main-content {
+	/*border: 1px solid black;*/
+	margin: 0px auto;
+	margin-left: 42px;
+	margin-right: 42px;
+}
+
+.menu {
+	height: 60px;
+	text-align: center;
+}
+
+nav {
+	display: inline-block;
+	margin-top: 22px;
+}
+
+nav a {
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000;
+	letter-spacing: 0.1em;
+	font-family: 'PFDinTextCondPro-Regular';
+	margin-right: 38px;
+}
+
+nav a:last-child {
+	margin-right: 0px;
+}
+
+nav a:hover {
+	color: #a2b3b3;
+	text-decoration: none;
+}
+
+#main-slides {
+	width: 1276px;
+	height: 470px;
+	margin-right: 0px;
+}
+
+.carousel-control {
+	width: 50px;
+	background: none !important;
+}
+
+.glyphicon-arrow-right {
+	font-size: 9px;
+}
+
+#main-slides .item {
+	height: 470px;
+	background-color: #a2b3b3;
+}
+
+#main-slides .item .celebrity-image img{
+	height: 470px;
+	bottom: 0px;
+	right: 0px;
+	position: absolute;
+}
+
+.celebrity-info {
+	display: inline-block;
+	width: 60%;
+	height: 100%;
+}
+
+.celebrity-message {
+	margin-top: 80px;
+	text-align: center;
+}
+
+.celebrity-info-title {
+	text-transform: uppercase;
+	color: white;
+	font-size: 15px;
+	font-family: 'PTSerifRegular';
+	letter-spacing: 0.03em;
+}
+
+.celebrity-info-text {
+	font-family: 'PFDinTextCondPro-Regular';
+	font-size: 15px;
+	color: white;
+}
+
+.celebrity-info-link {
+	font-family: 'PTSerifRegular';
+	font-size: 12px;
+	font-weight: bold;
+	color: #343d3d;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+.designer {
+	position: absolute;
+	bottom: 70px;
+	left: 35px;
+	display: inline-block;
+	width: 233px;
+	height: 233px;
+}
+
+.designer .parent-rhomb {
+	display: inline-block;
+	position: relative;
+	top: 34px;
+	left: 34px;
+	width: 164px;
+	height: 164px;
+	transform: rotate(45deg);
+	background: none;
+	border: 1px white solid;
+}
+
+.designer .child-rhomb {
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	left: 4px;
+	width: 154px;
+	height: 154px;
+	background: none;
+	border: 1px white solid;
+}
+
+.designer-info {
+	display: inline-block;
+	position: absolute;
+	top: 55px;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+}
+
+#main-slides .designer .designer-info img {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	border: 1px white solid;
+}
+
+.designer-info hr {
+	margin: 10px 45px auto;
+	height: 1px;
+	background: linear-gradient(90deg, #b5c2c2, white, #b5c2c2);
+	border: none;
+}
+
+.designer-title {
+	margin-top: 6px;
+	font-family: 'PFDinTextCondPro-Regular';
+	font-size: 15px;
+	color: white;
+}
+
+.designer-rate {
+	margin-top: 3px;
+	font-size: 12px;
+	color: white;
+}
+
+.celebrity-clothes-list {
+	padding-left: 0px;
+	position: absolute;
+	top: 247px;
+	left: 237px;
+	text-decoration: none;
+}
+
+.celebrity-clothes {
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 45px;
+	position: relative;
+}
+
+.celebrity-clothes .parent-rhomb {
+	display: inline-block;
+	position: relative;
+	width: 71px;
+	height: 71px;
+	transform: rotate(45deg);
+	background: white;
+}
+
+.celebrity-clothes .child-rhomb {
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	left: 2px;
+	width: 67px;
+	height: 67px;
+	background: none;
+	border: 1px #b5c2c2 solid;
+}
+
+.celebrity-clothes-info {
+	z-index: 1;
+	display: inline-block;
+	position: absolute;
+	text-align: center; 
+	width: 100%;
+}
+
+.celebrity-clothes-info hr {
+	margin: 0px 8px;
+	background-color: #b5c2c2;
+	height: 1px;
+    border: none;
+}
+
+.celebrity-clothes-info .clothes-price {
+	margin-top: 15px;
+	font-size: 14px;
+	color: #b5c2c2;
+	font-family: 'PFDinTextCondPro-Regular';
+	letter-spacing: 0.01em;
+}
+
+.celebrity-clothes-info .clothes-title {
+	font-size: 14px;
+	color: #b5c2c2;
+	font-family: 'PFDinTextCondPro-Regular';
+	letter-spacing: 0.01em;
+}
