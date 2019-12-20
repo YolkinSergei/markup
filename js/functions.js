@@ -253,8 +253,6 @@ function createProductPartnersElements (data) {
 			'</div><div class="btn-rhomb"><div class="btn-rhomb-child">' + 
 			'<i class="glyphicon glyphicon-share"></i></div></div>';
 
-
-
 		if ( (i+1) % 3 === 0 || (i+1) === data.length ) {
 			items.push(itemEl);
 
