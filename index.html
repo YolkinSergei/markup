@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Yolkin S - markup</title>
 
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
@@ -22,99 +23,160 @@
 		</div>
 	
 		<div id="main-slides" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#main-slides" data-slide-to="0" class="active"></li>
-				<li data-target="#main-slides" data-slide-to="1"></li>
-			</ol>
+			
+			<ol class="carousel-indicators"></ol>
 
-			<div class="carousel-inner" id="main-slides-inner">
-				<div class="item active">
-					<div class="celebrity-info">
-						<div class="celebrity-message">
-							<p class="celebrity-info-title">
-								Thank you, John for using our taxfree4u service!
-							</p>
-							<p class="celebrity-info-text">
-								Here's some items you might like
-							</p>
-							<a class="celebrity-info-link">
-								See all my looks
-							</a>
-						</div>
-					</div>
-
-					<div class="designer">
-						<div class="designer-info">
-							<img src="./images/designers/k_tulupova.jpg" alt="Katerina Tulupova">
-							<hr>
-							<div class="designer-title">Made by Jany</div>
-							<div class="designer-rate">
-								<span class="glyphicon glyphicon-star"></span>
-								<span class="glyphicon glyphicon-star"></span>
-								<span class="glyphicon glyphicon-star"></span>
-								<span class="glyphicon glyphicon-star-empty"></span>
-								<span class="glyphicon glyphicon-star-empty"></span>
-							</div>
-						</div>
-						<div class="parent-rhomb">
-							<div class="child-rhomb"></div>
-						</div>
-					</div>
-					
-					<div class="celebrity-clothes-list">
-						<div class="celebrity-clothes">
-							<div class="celebrity-clothes-info">
-								<div class="clothes-price">500 $</div>
-								<hr>
-								<div class="clothes-title">T-shirt</div>
-							</div>
-							<div class="parent-rhomb">
-								<div class="child-rhomb"></div>
-							</div>
-						</div>
-						<div class="celebrity-clothes">
-							<div class="celebrity-clothes-info">
-								<div class="clothes-price">1370 $</div>
-								<hr>
-								<div class="clothes-title">Trousers</div>
-							</div>
-							<div class="parent-rhomb">
-								<div class="child-rhomb"></div>
-							</div>
-						</div>
-						<div class="celebrity-clothes">
-							<div class="celebrity-clothes-info">
-								<div class="clothes-price">900 $</div>
-								<hr>
-								<div class="clothes-title">Shoes</div>
-							</div>
-							<div class="parent-rhomb">
-								<div class="child-rhomb"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="celebrity-image">
-						<img src="./images/celebrities/MarkWahlberg.png" alt="">
-					</div>
-				</div>
-			</div>
+			<div class="carousel-inner" id="main-slides-inner"></div>
 
 			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#main-slides" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="glyphicon glyphicon-arrow-left"></span>
 				<span class="sr-only">Previous</span>
 			</a>
 			<a class="right carousel-control" href="#main-slides" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="glyphicon glyphicon-arrow-right"></span>
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+
+		<div class="second-row">
+			<div class="new-trip">
+				<div class="new-trip-img">
+					<img src="./images/box.png" alt="">
+				</div>
+
+				<div class="rhomb"></div>
+
+				<div class="trip-text">
+					<p class="trip-text-title">Going to a new trip?<br>Click here to get your refund</p>
+					<p class="trip-text-body">With TaxFree4U you can get up to 18%
+						<br>refund from shopping in EU</p>
+					<a href="">Start new trip</a>
+				</div>
+
+			</div>
+			<div class="recommended-stylists">
+				<div id="recommended-stylists-slides" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" id="recommended-stylists-slides-inner"></div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#recommended-stylists-slides" data-slide="prev">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#recommended-stylists-slides" data-slide="next">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="third-row">
+			<div class="video">
+				<video src="./images/video/movie.mp4">
+				</video>
+					
+				<div class="video-controls">
+					<button id="btnPlay"><i class="glyphicon glyphicon-play"></i></button>
+					<div id="barContainer">
+						<div id="durationBar">
+						</div>
+						<div id="positionBar"></div>
+					</div>
+					<!--<button><i class="glyphicon glyphicon-resize-full"></i></button>-->
+				</div>
+			</div>
+			
+			<div class="refund-calculator">
+				<form action="">
+					<label for="">Refund calculator</label>
+					<img src="./images/grey-divider.png" alt="">
+					<select name="country">
+						<option>Select country</option>
+						<option value="AU">Austria</option>
+						<option value="BL">Belarus</option>
+						<option value="GM">Germany</option>
+						<option value="PL">Poland</option>
+						<option value="UA">Ukraine</option>
+					</select>
+					<input type="text" placeholder="Type purchase" name="type">
+					<button action="" id="btnStartTrip">Start new trip</button>
+				</form>
+			</div>
+
+			<div class="latest-looks">
+				<div id="latest-looks-slides" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" id="latest-looks-slides-inner"></div>
+
+					<a class="left carousel-control" href="#latest-looks-slides" data-slide="prev">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#latest-looks-slides" data-slide="next">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>	
+			</div>
+
+			<div class="best-rated-looks">
+				<div id="best-rated-looks-slides" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" id="best-rated-looks-slides-inner"></div>
+
+					<a class="left carousel-control" href="#best-rated-looks-slides" data-slide="prev">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#best-rated-looks-slides" data-slide="next">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>				
+			</div>
+		</div>
+
+		<div class="fourth-row">
+				<div id="product-partners-slides" class="carousel slide" data-ride="carousel">
+					<div class="product-form">
+						<form action="">
+							<label for="">Product partners</label>
+							<img class="divider" src="./images/grey-divider.png" alt="">
+							<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+							<button>Featured</button>
+							<select name="" id="">
+								<option>By city</option>
+								<option value="Kyiv">Kyiv</option>
+								<option value="Lviv">Lviv</option>
+								<option value="Odessa">Odessa</option>
+								<option value="Kharkiv">Kharkiv</option>
+								<option value="Uzhgorod">Uzhgorod</option>
+							</select>
+						</form>
+					</div>
+
+					<div class="carousel-inner" id="product-partners-slides-inner"></div>
+
+					<a class="left carousel-control" href="#product-partners-slides" data-slide="prev">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#product-partners-slides" data-slide="next">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>				
+		</div>
 	</div>
+
+
+	<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="./js/script.js"></script>
+	<script src="./js/handlers.js"></script>
+	<script src="./js/functions.js"></script>
+	<script type="module" src="./js/script.js"></script>
 </body>
 </html>
