@@ -1,4 +1,5 @@
 let celebritiesData = [
+	
 	{
 		celebrityPhoto: './images/celebrities/MarkWahlberg.png',
 		celebrityTitle: 'Thank you, Mark for using our taxfree4u service!',

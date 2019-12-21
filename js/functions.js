@@ -105,13 +105,11 @@ function createCelebrityElement(data) {
 	}
 
 	if (data.celebrityPhoto) {
-		let celebrityImageEl = createElementWithClasses(['celebrity-image']),
-		image = document.createElement('img');
+		let image = document.createElement('img');
 
 		image.setAttribute('src', data.celebrityPhoto);
-		celebrityImageEl.appendChild(image);
 
-		itemEl.appendChild(celebrityImageEl);
+		itemEl.appendChild(image);
 	}
 
 	return itemEl;

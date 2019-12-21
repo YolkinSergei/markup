@@ -20,11 +20,6 @@ let productPartnersData = [
 		description: 'Pullover',
 		price: '160 $'
 	},{
-		image: './images/products/4.jpg',
-		colors: ['lime', 'green'],
-		description: 'T-shirt',
-		price: '170 $'
-	},{
 		image: './images/products/5.jpg',
 		colors: ['funchsia'],
 		description: 'Shirt',

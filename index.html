@@ -2,33 +2,37 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<title>Yolkin S - markup</title>
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<div class="main-content">
-		<div class="menu">
-			<nav>
-				<a href="">My TaxFree</a>
-				<a href="">New Trip</a>
-				<a href="">Get TaxFree Card</a>
-				<a href="">Shopping</a>
-				<a href="">Stylists</a>
-				<a href="">Blog</a>
-				<a href="">About</a>
-			</nav>
-		</div>
-	
+	<header>
+		<img src="./images/black_logo.jpg" alt="">
+		<nav>
+			<a href="">My TaxFree</a>
+			<a href="">New Trip</a>
+			<a href="">Get TaxFree Card</a>
+			<a href="">Shopping</a>
+			<a href="">Stylists</a>
+			<a href="">Blog</a>
+			<a href="">About</a>
+		</nav>
+		<button class="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+		<button class="menu"><i class="fa fa-bars"></i></button>
+		<button class="discussion"><i class="fa fa-commenting-o"></i></button>
+	</header>
+	<main>	
 		<div id="main-slides" class="carousel slide" data-ride="carousel">
 			
 			<ol class="carousel-indicators"></ol>
 
 			<div class="carousel-inner" id="main-slides-inner"></div>
 
-			<!-- Left and right controls -->
 			<a class="left carousel-control" href="#main-slides" data-slide="prev">
 				<span class="glyphicon glyphicon-arrow-left"></span>
 				<span class="sr-only">Previous</span>
@@ -59,7 +63,6 @@
 				<div id="recommended-stylists-slides" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner" id="recommended-stylists-slides-inner"></div>
 
-					<!-- Left and right controls -->
 					<a class="left carousel-control" href="#recommended-stylists-slides" data-slide="prev">
 						<span class="glyphicon glyphicon-arrow-left"></span>
 						<span class="sr-only">Previous</span>
@@ -84,76 +87,79 @@
 						</div>
 						<div id="positionBar"></div>
 					</div>
-					<!--<button><i class="glyphicon glyphicon-resize-full"></i></button>-->
 				</div>
 			</div>
 			
-			<div class="refund-calculator">
-				<form action="">
-					<label for="">Refund calculator</label>
-					<img src="./images/grey-divider.png" alt="">
-					<select name="country">
-						<option>Select country</option>
-						<option value="AU">Austria</option>
-						<option value="BL">Belarus</option>
-						<option value="GM">Germany</option>
-						<option value="PL">Poland</option>
-						<option value="UA">Ukraine</option>
-					</select>
-					<input type="text" placeholder="Type purchase" name="type">
-					<button action="" id="btnStartTrip">Start new trip</button>
-				</form>
-			</div>
+			<div class="calculator-and-looks">
+				<div class="refund-calculator">
+					<form action="">
+						<label for="">Refund calculator</label>
+						<img src="./images/grey-divider.png" alt="">
+						<select name="country">
+							<option>Select country</option>
+							<option value="AU">Austria</option>
+							<option value="BL">Belarus</option>
+							<option value="GM">Germany</option>
+							<option value="PL">Poland</option>
+							<option value="UA">Ukraine</option>
+						</select>
+						<input type="text" placeholder="Type purchase" name="type">
+						<button action="" id="btnStartTrip">Start new trip</button>
+					</form>
+				</div>
+				
+				<div class="looks">
+					<div class="latest-looks">
+						<div id="latest-looks-slides" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" id="latest-looks-slides-inner"></div>
 
-			<div class="latest-looks">
-				<div id="latest-looks-slides" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" id="latest-looks-slides-inner"></div>
+							<a class="left carousel-control" href="#latest-looks-slides" data-slide="prev">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#latest-looks-slides" data-slide="next">
+								<span class="glyphicon glyphicon-arrow-right"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>	
+					</div>
 
-					<a class="left carousel-control" href="#latest-looks-slides" data-slide="prev">
-						<span class="glyphicon glyphicon-arrow-left"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="right carousel-control" href="#latest-looks-slides" data-slide="next">
-						<span class="glyphicon glyphicon-arrow-right"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>	
-			</div>
+					<div class="best-rated-looks">
+						<div id="best-rated-looks-slides" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" id="best-rated-looks-slides-inner"></div>
 
-			<div class="best-rated-looks">
-				<div id="best-rated-looks-slides" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" id="best-rated-looks-slides-inner"></div>
-
-					<a class="left carousel-control" href="#best-rated-looks-slides" data-slide="prev">
-						<span class="glyphicon glyphicon-arrow-left"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="right carousel-control" href="#best-rated-looks-slides" data-slide="next">
-						<span class="glyphicon glyphicon-arrow-right"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>				
+							<a class="left carousel-control" href="#best-rated-looks-slides" data-slide="prev">
+								<span class="glyphicon glyphicon-arrow-left"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#best-rated-looks-slides" data-slide="next">
+								<span class="glyphicon glyphicon-arrow-right"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>				
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="fourth-row">
+				<div class="product-form">
+					<form action="">
+						<label for="">Product partners</label>
+						<img class="divider" src="./images/grey-divider.png" alt="">
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+						<button>Featured</button>
+						<select name="" id="">
+							<option>By city</option>
+							<option value="Kyiv">Kyiv</option>
+							<option value="Lviv">Lviv</option>
+							<option value="Odessa">Odessa</option>
+							<option value="Kharkiv">Kharkiv</option>
+							<option value="Uzhgorod">Uzhgorod</option>
+						</select>
+					</form>
+				</div>
 				<div id="product-partners-slides" class="carousel slide" data-ride="carousel">
-					<div class="product-form">
-						<form action="">
-							<label for="">Product partners</label>
-							<img class="divider" src="./images/grey-divider.png" alt="">
-							<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-							<button>Featured</button>
-							<select name="" id="">
-								<option>By city</option>
-								<option value="Kyiv">Kyiv</option>
-								<option value="Lviv">Lviv</option>
-								<option value="Odessa">Odessa</option>
-								<option value="Kharkiv">Kharkiv</option>
-								<option value="Uzhgorod">Uzhgorod</option>
-							</select>
-						</form>
-					</div>
 
 					<div class="carousel-inner" id="product-partners-slides-inner"></div>
 
@@ -167,8 +173,48 @@
 					</a>
 				</div>				
 		</div>
-	</div>
+	</main>
 
+	<footer>
+		<div class="logo-footer">
+			<img src="./images/blue_logo.jpg" alt="">
+		</div>
+		
+		<div class="footer-content">
+			<div class="itunes-link">
+				<img src="./images/app_logo.jpg" alt="">
+				<a href="">DOWNLOAD APP IN iTunes</a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="">My Taxfree</a></li>
+					<li><a href="">New trip</a></li>
+					<li><a href="">Get Taxfree card</a></li>
+					<li><a href="">Shopping</a></li>
+				</ul>
+				<ul>
+					<li><a href="">Stylists</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">About</a></li>
+				</ul>
+			</nav>
+			<address>
+				<label>Follow us</label>
+				<form action="">
+					<input type="text">
+					<button>Subscribe</button>
+				</form>
+				<nav>
+					<ul>
+						<li><button><i class="fa fa-pinterest-p"></i></button></li>
+						<li><button><i class="fa fa-facebook"></i></button></li>
+						<li><button><i class="fa fa-twitter"></i></button></li>
+						<li><button><i class="fa fa-instagram"></i></button></li>
+					</ul>
+				</nav>
+			</address>
+		</div>
+	</footer>
 
 	<script src="//code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

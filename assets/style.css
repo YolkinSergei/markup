@@ -1,17 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-
-html {
-	padding: 0px;
-}
-
-body {
-	margin: 0px auto;
-	max-width: 1360px;
-	min-width: 1360px;
-}
-
 @font-face {
 	font-family: 'PFDinTextCondPro-Regular';
 	src: local('PFDinTextCondPro-Regular'), url('PFDinTextCondPro-Regular.woff') format('woff');
@@ -27,45 +13,98 @@ body {
 	src: local('PTSerifRegular'), url('PTSerifRegular.woff') format('woff');
 }
 
-.main-content {
+* {
+	box-sizing: border-box;
+}
+
+html {
+	padding: 0px;
+}
+
+body {
 	margin: 0px auto;
-	margin-left: 42px;
-	margin-right: 42px;
+	max-width: 1360px;
+	min-width: 500px;
 }
 
-.menu {
-	height: 50px;
-	text-align: center;
+header {
+	height: auto;
+	text-align: center;	
+	position: relative;
 }
 
-nav {
+header img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+header button {
+	height: 63px;
+	width: 42px;
+	background: none;
+	color: #7a7a7a;
+	position: absolute;
+	border: 1px solid #c6c6c6;
+	border-top: none;
+	font-size: 17px;
+}
+
+header button:hover {
+	color: #0000ff;
+}
+
+button.search {
+	top: 0px;
+	right: 41px;
+}
+
+button.menu {
+	top: 0px;
+	right: 0px;
+}
+
+button.discussion {
+	right: 0px;
+	top: 63px;
+}
+
+header nav {
 	display: inline-block;
-	margin-top: 22px;
+	margin: 22px 120px 10px 260px;
 }
 
-nav a {
+header nav a {
 	display: inline-block;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 12px;
 	color: #000000;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.05em;
 	font-family: 'PFDinTextCondPro-Regular';
-	margin-right: 38px;
+	margin-right: 34px;
 }
 
-nav a:last-child {
+header nav a:last-child {
 	margin-right: 0px;
 }
 
-nav a:hover {
-	color: #a2b3b3;
+header nav a:hover {
+	color: #0000ff;
 	text-decoration: none;
 }
 
+
+main {
+	margin: 0px auto;
+	margin-left: 42px;
+	margin-right: 42px;
+}
+
 #main-slides {
-	width: 1276px;
+	width: 100%;
 	height: 470px;
 	margin-right: 0px;
 }
@@ -130,8 +169,15 @@ li.active .indicator-inner {
 	background-color: #a2b3b3;
 }
 
-#main-slides .item .celebrity-image img{
-	height: 470px;
+.celebrity-image {
+	z-index: -1;
+	height: 100%;
+	width: 50%;
+}
+
+#main-slides .item > img{
+    width: auto;
+    height: calc(100% + 10px);
 	bottom: 0px;
 	right: 0px;
 	position: absolute;
@@ -141,6 +187,7 @@ li.active .indicator-inner {
 	display: inline-block;
 	width: 60%;
 	height: 100%;
+	z-index: 4;
 }
 
 .celebrity-message {
@@ -178,8 +225,8 @@ li.active .indicator-inner {
 
 .celebrity-info-link:hover {
 	text-decoration: none;
-	border-bottom: 1px white solid;
-	color: white;
+	border-bottom: 1px #0000ff solid;
+	color: #0000ff;
 }
 
 .designer {
@@ -189,6 +236,7 @@ li.active .indicator-inner {
 	display: inline-block;
 	width: 233px;
 	height: 233px;
+	z-index: 3;
 }
 
 .designer .parent-rhomb {
@@ -256,6 +304,7 @@ li.active .indicator-inner {
 	top: 237px;
 	left: 237px;
 	text-decoration: none;
+	z-index: 3;
 }
 
 .celebrity-clothes {
@@ -316,7 +365,7 @@ li.active .indicator-inner {
 }
 
 .celebrity-clothes-info .clothes-title:hover {
-	color: #343d3d;
+	color: #0000ff;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -324,6 +373,8 @@ li.active .indicator-inner {
 .second-row {
 	height: 425px;
 	padding: 0px;
+	display: flex;
+    flex-direction: row;
 }
 
 .new-trip {
@@ -344,14 +395,6 @@ li.active .indicator-inner {
 	transform: rotate(45deg);
 	background: none;
 	border: 2px  white solid;
-}
-
-.new-trip-image {
-
-}
-
-.new-trip-image img{
-
 }
 
 .trip-text {
@@ -389,7 +432,7 @@ li.active .indicator-inner {
 	margin: 0px;
 	display: inline-block;
 	height: 100%;
-	width: 850px;
+	flex: 1;
 }
 
 #recommended-stylists-slides {
@@ -503,11 +546,12 @@ li.active .indicator-inner {
 }
 
 .rec-designer-content a:hover {
-	color: #b2b1ac;	
+	color: #0000ff;	
 }
 
 .third-row {
 	height: 473px;
+	/*width: 100%;*/
 }
 
 div.video {
@@ -516,6 +560,7 @@ div.video {
 	background-color: black;
 	display: inline-block;
 	float: left;
+	position: relative;
 }
 
 video {
@@ -524,38 +569,40 @@ video {
 }
 
 .video-controls {
-	position: relative;
-	top: -27px;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
 	flex-direction: row;
 	display: flex;
 	align-items: center;
 	justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
+    padding-right: 20px;
 }
 
 .video-controls button {
 	width: 30px;
 	background: none;
 	border: none;
-}
-
-.video-controls button i {
 	color: white;
 }
 
 .latest-looks {
 	display: inline-block;
+	flex: 1;
 	float: left;
-
+	/*min-width: 212px;*/
 }
 
 .best-rated-looks {
 	display: inline-block;
+	flex: 1;
+	/*min-width: 212px;*/
 }
 
 #barContainer {
 	display: inline-block;
-	width: 750px;
+	width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
 	height: 4px;
 }
@@ -576,6 +623,16 @@ video {
     margin-top: -7px;
 }
 
+.calculator-and-looks {
+	display: flex;
+	flex-direction: column;
+	float: left;
+}
+
+.looks {
+	display: flex;
+	flex-direction: row;
+}
 
 .refund-calculator {
 	display: flex;
@@ -641,21 +698,27 @@ video {
 	letter-spacing: 0.02em;
 }
 
+.refund-calculator form button:hover {
+	background-color: #0000ff;
+}
+
 #latest-looks-slides-inner .item {
-	width: 213px;
 	height: 241px;
 	background-color: #e7e2e1;
 	align-items: center;
 	padding-top: 15px;
+	width: 100%;
+	margin: 0;
 }
 
 
 #best-rated-looks-slides-inner .item {
-	width: 212px;
 	height: 241px;
 	background-color: #d7d4d5;
 	align-items: center;
 	padding-top: 15px;
+	width: 100%;
+	margin: 0;
 }
 
 #latest-looks-slides-inner .item p {
@@ -716,7 +779,7 @@ video {
 }
 
 #best-rated-looks-slides-inner .item {
-	width: 212px;
+	width: 100%;
 	height: 241px;
 	background-color: #d7d4d5;
 }
@@ -778,9 +841,9 @@ video {
   opacity: 1;
 }
 
-#product-partners-slides {
-	height: 400px;
-	width: 100%;
+.fourth-row {
+	display: flex;
+	background-color: #e5ecf0;
 }
 
 #latest-looks-slides .carousel-control{
@@ -792,10 +855,13 @@ video {
 }
 
 #product-partners-slides {
-	background-color: #e5ecf0;
+	height: 400px;
+	flex: 3;
+	display: flex;
 }
 
 .product-form {
+	flex: 1;
 	display: flex;
 	justify-content: center;
 	/*align-items: center;*/
@@ -828,7 +894,7 @@ video {
 	font-size: 14px;
 }
 
-.product-form form button{
+.product-form form button {
 	width: 180px;
 	height: 32px;
 	font-family: 'PFDinTextCondPro-Regular';
@@ -836,6 +902,10 @@ video {
 	background-color: #a2b3b3;
 	margin: 25px auto 15px;
 	color: white;
+}
+
+.product-form form button:hover {
+	background-color: #0000ff;
 }
 
 .product-form form select{
@@ -854,27 +924,30 @@ img.divider {
 	margin: 13px auto 6px;
 }
 
-.item {
+#product-partners-slides-inner .item {
 	height: 100%;
+	flex: 1;
 }
 
 #product-partners-slides-inner {
-	width: 75%;
+	width: 100%;
 	height: 100%;
-	display: inline-block;
+	display: flex;
 }
 
 .parent-container {
 	width: 100%;
 	height: 100%;
+	display: flex;
+	flex-direction: row;
 }
 
 .product-container {
-	width: calc(100% / 3);
-	height: 100%;
+	flex: 1;
+	/*height: 100%;*/
 	display: inline-block;
 	float: left;
-	padding: 40px 40px 40px 0;
+	margin: 40px 40px 40px 0;
 }
 
 .product-info {
@@ -894,6 +967,8 @@ img.divider {
 	max-height: 247px;
 	max-width: 247px;
 	margin: 0 auto;
+	width: 100%;
+	height: auto;
 }
 
 .product-price {
@@ -995,6 +1070,10 @@ img.divider {
 	margin-right: 0;
 }
 
+.hidden-panel .btn-rhomb:hover {
+	background-color: #0000ff;
+}
+
 .hidden-panel .btn-rhomb-child {
 	width: 100%;
 	height: 100%;
@@ -1012,4 +1091,489 @@ img.divider {
 #product-partners-slides-inner .product-container:hover .hidden-panel {
   visibility: visible;
   opacity: 1;
+}
+
+footer {
+	background-color: #d0dde4;
+	margin: 0 42px 100px 42px;
+}
+
+
+.logo-footer {
+	max-width: 100%;
+	max-height: 140px;
+	background-color: #d0dde4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #dfe7ec;
+}
+
+footer .footer-content	{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	padding: 33px 0 39px 0;
+}
+
+.itunes-link {
+	flex: 1;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.itunes-link img {
+	margin-bottom: 32px;
+}
+
+.itunes-link a {
+	font-family: 'PFDinTextCondPro-Regular';
+	font-size: 15px;
+	color: #474747;
+	text-decoration: none;
+	border-bottom: 1px solid #474747;
+	margin-bottom: 18px;
+	line-height: 1;
+}
+
+.footer-content > nav {
+	padding: 0;
+	margin: 0;
+	flex: 2;
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-content > nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 63px;
+	flex: 1;
+}
+
+.footer-content > nav ul li {
+	margin-bottom: 9px;
+	padding: 0;
+}
+
+.footer-content > nav ul li a {
+	color: #7d8386;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 1;
+	letter-spacing: 0.06em;
+	font-family: 'PFDinTextCondPro-Regular';
+	text-transform: uppercase;
+}
+
+.footer-content > nav ul li a:hover {
+	text-decoration: none;
+	color: #0000ff;
+}
+
+.footer-content address {
+	flex: 1;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-content address {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.footer-content address label {
+	text-transform: uppercase;
+	font-family: 'PTSerifRegular';	
+	font-size: 15px;
+	color: #474747;
+	line-height: 1;
+    margin: 0 0 30px 0;
+}
+
+.footer-content address form {
+	display: flex;
+	flex-direction: row;
+	margin: 0 0 20px 0;
+}
+
+.footer-content address form input {
+	width: 130px;
+	height: 30px;
+	background-color: white;
+	font-family: 'PFDinTextCondPro-Regular';
+	border: none;
+	margin: 0;
+	color: #474747;
+	padding: 10px;
+}
+
+.footer-content address form button {
+	margin: 0;
+	background-color: #474747;
+	border: none;
+	color: white;
+	font-family: 'PFDinTextCondPro-Regular';
+	padding: 0 15px;
+}
+
+.footer-content address form button:hover {
+	background-color: #0000ff;
+}
+
+.footer-content address nav {
+	margin: 0;
+	padding: 0;
+}
+
+.footer-content address nav ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-content address nav ul li button {
+	width: 30px;
+	height: 30px;
+	margin: 0 13px 0 0;
+	background-color: #474747;
+	border: none;
+	color: white;
+	font-family: 'PFDinTextCondPro-Regular';
+	font-size: 22px;
+	color: #d0dde4;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+}
+
+.footer-content address nav ul li button:hover {
+	background-color: #0000ff;
+}
+
+/* Media Queries*/
+
+
+@media (max-width: 1376px) {
+	.third-row {
+		flex-direction: column;
+		height: 714px;
+	}
+
+	div.video {
+		width: 100%;
+		height: 473px;
+		/*flex: none;*/
+	}
+
+	div.video > video {
+		width: 100%;
+		height: 473px;
+	}
+	
+	.calculator-and-looks {
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.refund-calculator {
+		height: 241px;
+		flex: 1;
+	}
+
+	.looks {
+		flex: 2;
+	}
+}
+
+@media (max-width: 1330px) {
+	.rec-designer-photo img {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 1300px) {
+	.rec-designer-photo img {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 1100px) {
+	#product-partners-slides {
+		flex: 1;
+		height: 100%;
+	}
+
+	.parent-container {
+		flex-direction: column;
+		height: 1080px;
+	}
+
+	.product-container {
+		margin-bottom: 0;
+	}
+
+	.product-container::last-child {
+		margin-bottom: 40px;
+	}
+
+	.fourth-row {
+		height: 1120px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	.rec-designer-photo img {
+		opacity: 0.2;
+	}
+
+	.rec-designer-content table {
+		color: #4d4d4d;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	header nav a {
+		margin: 0 20px;
+	}
+
+	button.search {
+		top: 0px;
+		right: 0px;
+	}
+
+	button.menu {
+		top: 60px;
+		right: 0px;
+	}
+
+	button.discussion {
+		right: 0px;
+		top: 120px;
+	}
+}
+
+@media (max-width: 950px) {
+	.celebrity-info {
+		width: 50%;
+	}
+
+	.celebrity-message {
+		margin: 10px 0 0 10px;
+	}
+
+	#main-slides .item > img {
+		width: 50%;
+		height: auto;
+	}
+
+	.video {
+		display: none !important;
+	}
+
+	video {
+		display: none !important;
+	}
+
+	.third-row {
+		height: 241px;
+	}
+}
+
+
+@media screen and (max-width: 900px) {
+	.second-row {
+		flex-direction: column;
+		height: 850px;
+	}
+	
+	.new-trip {
+		flex: 1;
+		width: 100%;
+	}
+
+	.recommended-stylists {
+		flex: 1;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.rec-designer-photo img {
+		opacity: 0.2;
+	}
+
+	.rec-designer-content table {
+		color: #4d4d4d;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.rec-designer-photo img {
+		opacity: 0.2;
+	}
+
+	.rec-designer-content table {
+		color: #4d4d4d;
+	}
+
+	.third-row {
+		flex-direction: column;
+		height: 241px;
+	}
+
+	.fourth-row {
+		height: 1200px;
+	}
+	.calculator-and-looks {
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.refund-calculator {
+		height: 241px;
+		flex: 2;
+	}
+
+	#product-partners-slides {
+		height: 100%;
+	}
+
+	.product-container {
+		margin-bottom: 0;
+		flex: none;
+	}
+
+}
+
+@media (max-width: 730px) { 
+	header nav a{
+		display: flex;
+		flex-direction: column;
+		font-size: 20px;
+		margin: 10px;
+	}
+
+	.fourth-row {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.calculator-and-looks {
+		flex-direction: column;
+		height: 482px;
+	}
+
+	.refund-calculator {
+		width: 100%;
+	}
+
+	.product-form {
+		width: 100%;
+		flex: none;
+		height: auto;
+	}
+
+	.product-container {
+		margin: 20px;
+	}
+
+	.fourth-row {
+		height: 1320px;
+	}
+
+	.product-form form {
+		padding-bottom: 0px;
+	}
+
+	footer .footer-content {
+		flex-direction: column;
+	}
+
+	footer .footer-content > nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	footer .footer-content > nav ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	footer .footer-content > nav ul {
+		margin: 0;
+		padding: 0;
+	}
+	
+	footer .footer-content address {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+	}
+
+	.celebrity-info {
+		width: 100%;
+	}
+
+	.celebrity-message {
+		margin: 10px;
+	}
+
+	.celebrity-info-title {
+		font-size: 20px;
+	}
+
+	.celebrity-info-text {
+		font-size: 20px;
+	}
+
+	.celebrity-info-link {
+		font-size: 20px;
+	}
+	
+	.designer {
+		top: 158px;		
+	}
+
+	.designer-title {
+		font-size: 20px;
+	}
+
+	.celebrity-clothes {
+		font-size: 20px;
+	}
+
+	.celebrity-clothes-list {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 166px;
+		left: 300px;
+	}
+
+	#main-slides {
+		height: 800px;
+
+	}
+
+	#main-slides-inner {
+		height: 100%;
+	}
+
+	#main-slides-inner .item{
+		height: 100%;
+	}
+
+	#main-slides-inner .item > img{
+		width: 100%;
+	}
 }
